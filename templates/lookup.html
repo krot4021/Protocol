@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+	<form action="/lookup" method="POST">
+		<table>
+			<tr>      
+				<div class="form-group container">
+					<td> <label class="font-weight-bold ">Search for company name:</label> </td>
+					<td> <input type="text" name="name" class="form-control offset-1" placeholder="Enter company name" required> </td>
+					<td> <button type="submit" class="btn btn-dark btn-sm offset-7">Search</button> </td>
+				</div>
+				
+				<div class="container bg-dark">
+					<tr>
+						<td class="font-weight-normal"> {{c_name}} </td>
+						<td class="font-weight-normal">{{c_symbol}}</td>
+						<td class="font-weight-normal">{{c_exchange}}</td>
+					</tr>
+				</div>
+			</tr>
+		</table>
+	</form>
+</div>
+{% endblock %}

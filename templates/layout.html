@@ -1,0 +1,111 @@
+<!--Doctype HTML-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>protocol.inc</title>
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+        <style>
+            body{
+                background: url(static/img/bg_2.jpg) no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            h2 { 
+                font-family: monospace
+            }
+            
+            #search,
+            #submit {
+                float:left;
+            }
+            #searchbox{
+                background-color: #eaf8fc;
+                background-image: linear-gradient(#fff, #d4e8ec);
+                border-radius: 35px;    
+                border-width: 1px;
+                border-style: solid;
+                border-color: #c4d9df #a4c3ca #83afb7;            
+                width: 500px;
+                height: 35px;
+                padding: 10px;
+                margin: 100px auto 50px;
+                overflow: hidden; /* Clear floats */
+            }
+            #search {
+                padding: 5px 9px;
+                height: 23px;
+                width: 380px;
+                border: 1px solid #a4c3ca;
+                font: normal 13px 'trebuchet MS', arial, helvetica;
+                background: #f1f1f1;
+                border-radius: 50px 3px 3px 50px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+            }
+            #submit {    
+                background-color: #6cbb6b;
+                background-image: linear-gradient(#95d788, #6cbb6b);
+                border-radius: 3px 50px 50px 3px;    
+                border-width: 1px;
+                border-style: solid;
+                border-color: #7eba7c #578e57 #447d43;
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+                height: 35px;
+                margin: 0 0 0 10px;
+                padding: 0;
+                width: 90px;
+                cursor: pointer;
+                font: bold 14px Arial, Helvetica;
+                color: #23441e;    
+                text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+            }
+
+            #submit:hover {       
+                background-color: #95d788;
+                background-image: linear-gradient(#6cbb6b, #95d788);
+            }   
+
+            #submit:active {       
+                background: #95d788;
+                outline: none;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
+            }
+
+            .portfolio{
+                border: 1px solid;
+                
+                border-spacing: 5px;
+                width: 100%;
+            }
+            
+            .portfolio-head {
+                border: 1px solid;
+                padding: 15px;
+            }
+
+            .portfolio-data {
+                border: 1px solid;
+                padding: 15px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        {% include 'includes/_navbar.html' %}
+        
+        
+            <div class="container-fluid">
+                
+                {% include 'includes/_messages.html' %}
+            </div>
+                {% block body %} {%endblock%}
+                
+                    
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+    
+    </body>
+</html>

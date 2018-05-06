@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+	<form action="/getquote" method="POST">
+		<table>
+			<tr>      
+				<div class="form-group container">
+					<td> <label class="font-weight-bold ">Search for company symbol:</label> </td>
+					<td> <input type="text" name="symbol" class="form-control offset-1" placeholder="Enter ticker symbol." required> </td>
+					<td> <button type="submit" class="btn btn-dark btn-sm offset-7">Search</button> </td>
+				</div>
+				
+				<div class="container bg-dark">
+					<tr>
+						<td class="font-weight-normal"> {{c_price}} </td>
+					</tr>
+				</div>
+			</tr>
+		</table>
+	</form>
+</div>
+{% endblock %}

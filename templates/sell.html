@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+	<form action="/sell" method="POST">
+		<table>
+			<tr>      
+				<div class="form-group container">
+					<td> <label class="font-weight-bold ">Search for company symbol:</label> </td>
+                    <td> <input type="text" name="symbol" class="form-control offset-1" placeholder="Enter ticker symbol." required> </td>
+                    <tr>
+                    <td> <label class="font-weight-bold ">Enter number of shares to buy:</label> </td>
+                    <td> <input type="number" name="quantity" class="form-control offset-1" placeholder="Enter no of shares." required> </td>
+                    </tr>
+					<td> <button type="submit" class="btn btn-dark btn-sm ">Sell shares </button> </td>
+				</div>
+		</table>
+		<br>
+	</form>
+</div>
+
+<div class="container">	
+		<table class="portfolio">
+			<tr>		
+				<th class="portfolio-head">Company name</th>
+				<th class="portfolio-head">Company symbol</th>
+				<th class="portfolio-head">Last Price</th>
+				<th class="portfolio-head">Quantity</th>
+				<th class="portfolio-head">Balance</th>				
+			</tr>
+			{% for i in transaction %}
+			<tr>
+				
+				<td class="portfolio-data">{{i.c_name}}</td>
+				<td class="portfolio-data">{{i.c_symbol}}</td>
+				<td class="portfolio-data">{{i.c_lastprice}}</td>
+				<td class="portfolio-data">{{i.c_quantity}}</td>
+				<td class="portfolio-data">{{u_balance}}</td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+</div>
+
+{% endblock %} 
